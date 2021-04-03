@@ -1,27 +1,97 @@
 from project.pokemon import Pokemon
 
+
 class Trainer:
     def __init__(self, name):
         self.name = name
         self.pokemon = []
 
     def add_pokemon(self, pokemon: Pokemon):
-        if name not in self.pokemon:
-            self.pokemon.append(name)
-            return f"Caught {pokemon_details()} with health {pokemon_health}"
+        if pokemon.name not in self.pokemon:
+            self.pokemon.append(pokemon.name)
+            return f"Caught {pokemon.name} with health {pokemon.health}"
+        return f"This pokemon is already caught"
 
-        if self.name in self.pokemon:
-            return f"This pokemon is already caught"
-        return
+    def release_pokemon(self, pokemon_name):
+        if pokemon_name in self.pokemon:
+            self.pokemon.remove(pokemon_name)
+            return f"You have released {pokemon_name}"
+        elif pokemon_name not in self.pokemon:
+            return f"Pokemon is not caught"
+
+    def trainer_data(self):
+        res = f"Pokemon Trainer {self.name}\nPokemon count {len(self.pokemon)}\n"
+        for _ in self.pokemon:
+            # if self.pokemon in second_pokemon
+            res += f"- {pokemon.pokemon_details()}\n"
+        return res
 
 
-pokemon = Pokemon("Pikachu", 90)
-print(pokemon.pokemon_details())
-trainer = Trainer("Ash")
-print(trainer.add_pokemon(pokemon))
-second_pokemon = Pokemon("Charizard", 110)
-print(trainer.add_pokemon(second_pokemon))
-print(trainer.add_pokemon(second_pokemon))
-print(trainer.release_pokemon("Pikachu"))
-print(trainer.release_pokemon("Pikachu"))
-print(trainer.trainer_data())
+# from project.pokemon import Pokemon
+# from project.trainer import Trainer
+#
+# import unittest
+#
+#
+# class PokemonTest(unittest.TestCase):
+#     def setUp(self):
+#         self.trainer = Trainer("Ash")
+#         self.pokemon = Pokemon("Pikachu", 90)
+#         self.second_pokemon = Pokemon("Charizard", 110)
+#
+#     def test_pokemon_init(self):
+#         message = self.pokemon.pokemon_details()
+#         expected = "Pikachu with health 90"
+#         self.assertEqual(message, expected)
+#
+#     def test_adding_pokemon(self):
+#         message = self.trainer.add_pokemon(self.pokemon)
+#         expected = "Caught Pikachu with health 90"
+#         self.assertEqual(message, expected)
+#
+#     def test_adding_second_pokemon(self):
+#         message = self.trainer.add_pokemon(self.second_pokemon)
+#         expected = "Caught Charizard with health 110"
+#         self.assertEqual(message, expected)
+#
+#     def test_adding_already_added_pokemon(self):
+#         self.trainer.add_pokemon(self.second_pokemon)
+#         message = self.trainer.add_pokemon(self.second_pokemon)
+#         expected = "This pokemon is already caught"
+#         self.assertEqual(message, expected)
+#
+#     def test_releasing_pokemon(self):
+#         self.trainer.add_pokemon(self.pokemon)
+#         message = self.trainer.release_pokemon("Pikachu")
+#         expected = "You have released Pikachu"
+#         self.assertEqual(message, expected)
+#
+#     def test_releasing_pokemon_that_is_not_caught(self):
+#         message = self.trainer.release_pokemon("Pikachu")
+#         expected = "Pokemon is not caught"
+#         self.assertEqual(message, expected)
+#
+#     def test_trainer_data(self):
+#         self.trainer.add_pokemon(self.pokemon)
+#         self.trainer.add_pokemon(self.second_pokemon)
+#         self.trainer.release_pokemon("Pikachu")
+#         message = self.trainer.trainer_data()
+#         message = message.strip('\n')
+#         expected = "Pokemon Trainer Ash\nPokemon count 1\n- Charizard with health 110"
+#         self.assertEqual(message, expected)
+#
+#
+# if __name__ == '__main__':
+#     unittest.main()
+#
+#
+# pokemon = Pokemon("Pikachu", 90)
+# print(pokemon.pokemon_details())
+# trainer = Trainer("Ash")
+# print(trainer.add_pokemon(pokemon))
+# second_pokemon = Pokemon("Charizard", 110)
+# print(trainer.add_pokemon(second_pokemon))
+# print(trainer.add_pokemon(second_pokemon))
+# print(trainer.release_pokemon("Pikachu"))
+# print(trainer.release_pokemon("Pikachu"))
+# print(trainer.trainer_data())

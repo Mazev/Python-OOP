@@ -5,9 +5,3 @@ class Pokemon:
 
     def pokemon_details(self):
         return f"{self.name} with health {self.health}"
-
-
-
-
-
-
