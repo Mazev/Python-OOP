@@ -2,6 +2,7 @@ class ExercisePlan:
     _id = 0
 
     def __init__(self, trainer_id, equipment_id, duration):
+        ExercisePlan._id += 1
         self.trainer_id = trainer_id
         self.equipment_id = equipment_id
         self.duration = duration
