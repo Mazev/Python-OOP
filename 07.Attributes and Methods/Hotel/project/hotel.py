@@ -36,3 +36,6 @@ class Hotel:
         return f'''Hotel {self.name} has {self.guests} total guests
 Free rooms: {", ".join(free_rooms_numbers)}
 Taken rooms: {", ".join(taken_rooms_numbers)}'''
+
+
+

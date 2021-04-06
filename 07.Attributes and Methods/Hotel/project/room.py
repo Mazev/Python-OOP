@@ -1,5 +1,5 @@
 class Room:
-    def __init__(self, number, capacity):
+    def __init__(self, number, capacity) -> object:
         self.number = number
         self.capacity = capacity
         self.guests = 0
@@ -29,3 +29,4 @@ class Room:
 
         self.is_taken = False
         self.guests = 0
+
