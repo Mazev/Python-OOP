@@ -17,7 +17,7 @@ class User:
         for user in library.rented_books:
             for book in library.rented_books[user]:
                 if book == book_name:
-                    return f"The book {book_name} is already rented and will be available in {library.rented_books[user][book_name]} days!"
+                    return f"The book \"{book_name}\" is already rented and will be available in {library.rented_books[user][book_name]} days!"
 
     def return_book(self, author, book_name, library):
         if book_name in self.books:

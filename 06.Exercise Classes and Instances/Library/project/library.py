@@ -14,7 +14,8 @@ class Library:
     def remove_user(self, user):
         if user in self.user_records:
             self.user_records.remove(user)
-            # del self.rented_books[user]
+            if user.username in self.rented_books:
+                del self.rented_books[user]
         else:
             return f"We could not find such user to remove!"
 
@@ -29,6 +30,7 @@ class Library:
                     books_for_user = self.rented_books[old_username]
                     del self.rented_books[old_username]
                     self.rented_books[user.username] = books_for_user
+                return f"Username successfully changed to: {new_username} for userid: {user_id}"
             else:
                 return f"Please check again the provided username - it should be different than the username used so far!"
         else:
