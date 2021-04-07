@@ -6,8 +6,9 @@ class Document:
         self.file_name = file_name
         self.tags = []
 
-    def from_instances(self, id, category, topic, file_name):
-        pass
+    @classmethod
+    def from_instances(cls, id: int, category, topic, file_name):
+        return cls(id, category.id, topic.id, file_name)
 
     def add_tag(self, tag_content):
         if tag_content not in self.tags:

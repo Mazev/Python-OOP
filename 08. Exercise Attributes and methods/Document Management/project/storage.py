@@ -5,7 +5,7 @@ class Storage:
         self.documents = []
 
     def __repr__(self):
-        pass
+        return f"{self.categories} , {self.topic},  {self.documents}"
 
     def add_category(self, category):
         if category not in self.categories:
@@ -20,22 +20,29 @@ class Storage:
             self.documents.append(document)
 
     def edit_category(self, category_id, new_name):
-        pass
+        category = [c for c in self.categories if c.id == category_id][0]
+        category.edit(new_name)
 
     def edit_topic(self, topic_id, new_topic, new_storage_folder):
-        pass
+        topic = [t for t in self.topic if t.id == topic_id][0]
+        topic.edit(new_topic)
 
     def edit_document(self, document_id, new_file_name):
-        pass
+        doc = [d for d in self.documents if d.id == document_id][0]
+        doc.edit(new_file_name)
 
     def delete_category(self, category_id):
-        pass
+        category = [c for c in self.categories if c.id == category_id][0]
+        category.remove(category_id)
 
     def delete_topic(self, topic_id):
-        pass
+        del_topic = [d for d in self.topic if d.id == topic_id][0]
+        del_topic.remove(topic_id)
 
     def delete_document(self, document_id):
-        pass
+        del_doc = [d for d in self.documents if d.id == document_id][0]
+        del_doc.remove(document_id)
 
     def get_document(self, document_id):
-        pass
+        get_doc = [d for d in self.documents if d.id == document_id][0]
+        return get_doc
