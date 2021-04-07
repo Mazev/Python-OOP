@@ -7,6 +7,7 @@ class Storage:
     def __repr__(self):
         return f"{self.categories} , {self.topic},  {self.documents}"
 
+
     def add_category(self, category):
         if category not in self.categories:
             self.categories.append(category)
