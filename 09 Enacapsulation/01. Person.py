@@ -3,6 +3,8 @@ class Person:
         self.__name = name
         self.__age = age
 
+
+
     def get_name(self):
         return self.__name
 
@@ -13,3 +15,4 @@ class Person:
 person = Person("George", 32)
 print(person.get_name())
 print(person.get_age())
+print(person.name('stefan'))
