@@ -7,26 +7,26 @@ class Dough:
         
     @property
     def flour_type(self):
-        return 
+        return self.__flour_type
     
     @flour_type.setter
     def flour_type(self, value):
-        pass
+        self.__flour_type = value
     
     
     @property
     def baking_technique(self):
-        return 
+        return self.__baking_technique
     
     @baking_technique.setter
     def baking_technique(self, value):
-        pass
+        self.__baking_technique = value
     
     
     @property
     def weight(self):
-        return 
+        return self.__weight
     
     @weight.setter
     def weight(self, value):
-        pass
+        self.__weight = value

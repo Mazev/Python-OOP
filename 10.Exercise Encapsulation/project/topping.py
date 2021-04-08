@@ -9,7 +9,7 @@ class Topping:
     
     @topping_type.setter
     def topping_type(self, value):
-        pass
+        self.__topping_type = value
     
     @property
     def weight(self):
@@ -17,5 +17,5 @@ class Topping:
     
     @weight.setter
     def weight(self, value):
-        pass
+        self.__weight = value
     
