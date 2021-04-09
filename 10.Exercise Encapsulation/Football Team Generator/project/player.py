@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self,name, endurance, sprint, dribble, passing, shooting):
+    def __init__(self, name, endurance, sprint, dribble, passing, shooting):
         self.__name = name
         self.__endurance = endurance
         self.__sprint = sprint
@@ -8,14 +8,12 @@ class Player:
         self.__shooting = shooting
 
     def __str__(self):
-        return f"Player: {self.__name}\n" \
-               f"Endurance: {self.__endurance}\n" \
-               f"Sprint: {self.__sprint}\n" \
-               f"Dribble: {self.__dribble}\n" \
-               f"Passing: {self.__passing}\n" \
-               f"Shooting: {self.__shooting}"
-
-
+        return f"Player: {self.name}\n" \
+               f"Endurance: {self.endurance}\n" \
+               f"Sprint: {self.sprint}\n" \
+               f"Dribble: {self.dribble}\n" \
+               f"Passing: {self.passing}\n" \
+               f"Shooting: {self.shooting}\n"
 
     @property
     def name(self):
@@ -33,7 +31,6 @@ class Player:
     def endurance(self, value):
         self.__endurance = value
 
-
     @property
     def sprint(self):
         return self.__sprint
@@ -49,7 +46,6 @@ class Player:
     @dribble.setter
     def dribble(self, value):
         self.__dribble = value
-
 
     @property
     def passing(self):
