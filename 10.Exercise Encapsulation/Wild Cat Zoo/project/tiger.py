@@ -7,6 +7,6 @@ class Tiger:
     def __repr__(self):
         return f"Name: {self.name}, Age: {self.age}, Gender: {self.gender}"
 
-    @statistics
+
     def get_needs(self):
         return 45
