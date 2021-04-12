@@ -35,3 +35,69 @@
 # print(x)
 # outer()
 # print(x)
+
+
+# class Music:
+#     def __init__(self, title, artist, lyrics):
+#         self.title = title
+#         self.artist = artist
+#         self.lyrics = lyrics
+#
+#     def print_info(self):
+#         return f'This is "{self.title}" from "{self.artist}"'
+#
+#
+#     def play(self):
+#         return self.lyrics
+#
+#
+# song = Music("Title", "Artist", "Lyrics")
+# print(song.print_info())
+# print(song.play())
+
+
+# class Cup:
+#     def __init__(self, size, quantity):
+#         self.size = size
+#         self.quantity = quantity
+#
+#     def get_free_size(self):
+#         return self.size - self.quantity
+#
+#     def fill(self, milliliters):
+#         if self.get_free_size() < milliliters:
+#             return
+#         self.quantity += milliliters
+#
+#     def status(self):
+#         return self.get_free_size()
+#
+#
+# cup = Cup(100, 50)
+# cup.fill(50)
+# cup.fill(10)
+# print(cup.status())
+
+
+class Flower:
+    def __init__(self, name, water_requirements):
+        self.name = name
+        self.water_requirements = water_requirements
+        self.is_happy = False
+
+    def water(self, quantity):
+        if quantity >= self.water_requirements:
+            self.is_happy = True
+
+    def status(self):
+        if self.is_happy:
+            return f"{self.name} is happy"
+
+        return f"{self.name} is not happy"
+
+
+flower = Flower("Lilly", 100)
+flower.water(50)
+print(flower.status())
+flower.water(100)
+print(flower.status())
