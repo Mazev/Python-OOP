@@ -18,6 +18,7 @@ class Vet:
         if animal_name not in self.animals:
             return f"{animal_name} not in the clinic"
         self.animals.remove(animal_name)
+        Vet.animals.remove(animal_name)
         Vet.space +=1
         return f"{animal_name} unregistered successfully"
 
