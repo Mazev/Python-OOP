@@ -19,15 +19,11 @@ class Vet:
             return f"{animal_name} not in the clinic"
         self.animals.remove(animal_name)
         Vet.animals.remove(animal_name)
-        Vet.space +=1
+        Vet.space += 1
         return f"{animal_name} unregistered successfully"
-
-
-
 
     def info(self):
         return f"{self.name} has {len(self.animals)} animals. {Vet.space} space left in clinic"
-
 
 
 peter = Vet("Peter")
