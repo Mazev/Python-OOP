@@ -6,6 +6,10 @@ class Document:
         self.file_name = file_name
         self.tags = []
 
+    def __repr__(self):
+        return f"Document {self.id}: {self.file_name}; category {self.category_id}, topic {self.topic_id},\n" \
+               f" tags: {', '.join(self.tags)}"
+
     @classmethod
     def from_instances(cls, id, category, topic, file_name):
         return cls(id, category.id, topic.id, file_name)
@@ -20,8 +24,3 @@ class Document:
 
     def edit(self, file_name):
         self.file_name = file_name
-
-    def __repr__(self):
-        return f"Document {self.id}: {self.file_name};" \
-               f" category {self.category_id}, topic {self.topic_id}," \
-               f" tags: {', '.join(self.tags)}"
