@@ -42,22 +42,22 @@ class Pizza:
 
     def add_topping(self, topping):
         if len(self.__toppings) < self.__toppings_capacity:
-            if topping.toping_type not in self.__toppings:
-                self.__toppings[topping.toping_type] = 0
-            self.__toppings[topping.toping_type] += topping.weight
+            if topping.topping_type not in self.__toppings:
+                self.__toppings[topping.topping_type] = 0
+            self.__toppings[topping.topping_type] += topping.weight
         else:
             raise ValueError ("Not enough space for another topping")
 
     def calculate_total_weight(self):
-        res = self.__dough.weigt + sum(self.__toppings.values())
+        res = self.__dough.weight + sum(self.__toppings.values())
         return res
 
 
-# import unittest
+import unittest
 
-# from project.dough import Dough
+from project.dough import Dough
 # from project.pizza import Pizza
-# from project.topping import Topping
+from project.topping import Topping
 
 
 class Tests(unittest.TestCase):
