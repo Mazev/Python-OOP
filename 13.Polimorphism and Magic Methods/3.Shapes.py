@@ -36,9 +36,9 @@ class Rectangle(Shape):
         return 2 * (self.__width + self.__height)
 
 
-rectangle = Rectangle(10, 20)
-print(rectangle.calculate_area())
-print(rectangle.calculate_perimeter())
+# rectangle = Rectangle(10, 20)
+# print(rectangle.calculate_area())
+# print(rectangle.calculate_perimeter())
 
 # test rectangle
 import unittest
