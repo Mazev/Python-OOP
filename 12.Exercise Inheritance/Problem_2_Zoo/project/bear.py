@@ -6,3 +6,8 @@ class Bear(Animal, Mammal):
     def __init__(self):
         Mammal.__init__(self)
         Animal.__init__(self)
+
+
+
+
+print(Bear.mro())
